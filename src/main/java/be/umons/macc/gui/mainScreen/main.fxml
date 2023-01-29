@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600" prefWidth="1485"
+            fx:controller="be.umons.macc.gui.mainScreen.MainController"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+      <BorderPane prefHeight="600" prefWidth="1485">
+         <top>
+            <VBox>
+               <HBox prefHeight="120" BorderPane.alignment="CENTER" fx:id="selectionBox">
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%coffeeButton" fx:id="coffeeButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%cappuccinoButton" fx:id="cappuccinoButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%espressoButton" fx:id="espressoButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%espressoMacchiatoButton" fx:id="espressoMacchiatoButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%macchiatoButton" fx:id="macchiatoButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%milkyCoffeeButton" fx:id="milkyCoffeeButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#changeDrink" prefHeight="60" prefWidth="160" text="%milkyMousseButton" fx:id="milkyMousseButton" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <ProgressBar fx:id="preparationBar" prefHeight="60" prefWidth="270" progress="0.0" />
+                 <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                 <Button onAction="#takePreparation" prefHeight="60" prefWidth="45" text="OK" fx:id="okButton" />
+               </HBox>
+               <Separator prefHeight="30" prefWidth="1485" />
+            </VBox>
+         </top>
+         <center>
+            <HBox prefHeight="255" prefWidth="1485" BorderPane.alignment="CENTER">
+              <VBox prefHeight="255" fx:id="preparationBox">
+                 <Button prefHeight="60" prefWidth="325" onAction="#doubleCupsNumber" text="%twiceCupButton" fx:id="twiceCupButton" />
+                 <Separator prefHeight="5" prefWidth="325" />
+                 <HBox fx:id="quantityBox">
+                    <Button prefHeight="60" prefWidth="160" onAction="#lessQuantity" text="%lessQuantityButton" fx:id="lessQuantityButton" />
+                    <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                    <Button prefHeight="60" prefWidth="160" onAction="#moreQuantity" text="%moreQuantityButton" fx:id="moreQuantityButton" />
+                 </HBox>
+                 <Separator prefHeight="5" prefWidth="325" />
+                 <HBox fx:id="strongnessBox">
+                    <Button prefHeight="60" prefWidth="160" onAction="#lessStrong" text="%lessStrongButton" fx:id="lessStrongButton" />
+                    <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                    <Button prefHeight="60" prefWidth="160" onAction="#moreStrong" text="%moreStrongButton" fx:id="moreStrongButton" />
+                 </HBox>
+              </VBox>
+              <VBox prefHeight="255" prefWidth="830">
+                 <fx:include fx:id="deviceView" source="../deviceScreen/deviceView.fxml" />
+              </VBox>
+              <VBox fx:id="menuBox">
+                  <HBox fx:id="langBox">
+                      <Button prefHeight="60" prefWidth="105" onAction="#langToEN" text="EN" />
+                      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                      <Button prefHeight="60" prefWidth="105" onAction="#langToNL" text="NL" />
+                      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                      <Button prefHeight="60" prefWidth="105" onAction="#langToFR" text="FR" />
+                  </HBox>
+                 <Separator prefHeight="5" prefWidth="325" />
+                  <Button prefHeight="60" prefWidth="325" text="%childrenSecurityButton" fx:id="childrenSecurityButton" />
+                  <HBox fx:id="memoryBox">
+                      <Button prefHeight="60" prefWidth="160" onAction="#saveFavorite" text="%memorizationButton" fx:id="memorizationButton" />
+                      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+                      <Button prefHeight="60" prefWidth="160" onAction="#readFavorite" text="%favoriteButton" fx:id="favoriteButton" />
+                  </HBox>
+                 <Separator prefHeight="5" prefWidth="325" />
+                  <Button prefHeight="60" prefWidth="325" onAction="#preparation" text="%startStopButton" fx:id="startStopButton"/>
+              </VBox>
+            </HBox>
+         </center>
+         <bottom>
+            <VBox>
+               <Separator prefHeight="90" prefWidth="1485" />
+               <HBox prefHeight="255" prefWidth="1485" BorderPane.alignment="CENTER" fx:id="humanActionBox">
+                   <Button onAction="#humanActionMaintenance" prefHeight="60" prefWidth="200" text="%MaintenanceButton" fx:id="MaintenanceButton" />
+                   <Separator orientation="VERTICAL" prefHeight="60" prefWidth="120" />
+                   <Button onAction="#humanActionOverflowTank" prefHeight="60" prefWidth="200" text="%overFlowTankButton" fx:id="overFlowTankButton" />
+                   <Separator orientation="VERTICAL" prefHeight="60" prefWidth="120" />
+                   <Button onAction="#humanActionFilterChange" prefHeight="60" prefWidth="200" text="%filterButton" fx:id="filterButton" />
+                   <Separator orientation="VERTICAL" prefHeight="60" prefWidth="120" />
+                   <Button onAction="#humanActionCoffeeFill" prefHeight="60" prefWidth="200" text="%coffeeFillButton" fx:id="coffeeFillButton" />
+                   <Separator orientation="VERTICAL" prefHeight="60" prefWidth="120" />
+                   <Button onAction="#humanActionWaterFill" prefHeight="60" prefWidth="200" text="%waterFillButton" fx:id="waterFillButton" />
+                   <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+               </HBox>
+            </VBox>
+         </bottom>
+      </BorderPane>
+
+</AnchorPane>

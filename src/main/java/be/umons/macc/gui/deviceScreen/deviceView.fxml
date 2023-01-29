@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="255" prefWidth="325"
+            fx:controller="be.umons.macc.gui.deviceScreen.DeviceViewController"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+   <HBox>
+      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="60" />
+      <VBox BorderPane.alignment="CENTER" fx:id="ingredientLabelBox" >
+            <Label fx:id="drinkName" />
+            <Label text=" " />
+            <Label text=" " />
+            <Label text="%labelDrinkQuantity" fx:id="labelDrinkQuantity" />
+            <Label text="%labelGrainRow" fx:id="labelGrainRow" />
+            <Label text="%labelMilkQuantity" fx:id="labelMilkQuantity" />
+            <Label text="%labelChocolateQuantity" fx:id="labelChocolateQuantity" />
+            <Label text=" " />
+            <Label text="%labelStrongness" fx:id="labelStrongness" />
+            <Label text="%labelCups" fx:id="labelCups" />
+            <Label text=" " />
+            <Label text=" " />
+            <Label text="%labelWater" fx:id="labelWater" />
+            <Label text="%labelCoffee" fx:id="labelCoffee"/>
+            <Label text="%labelOverflowTank" fx:id="labelOverflowTank"/>
+            <Label text="%labelFilter"/>
+      </VBox>
+      <VBox BorderPane.alignment="CENTER">
+            <Label text=" " />
+            <Label text=" " />
+            <Label text=" " />
+            <Label fx:id="drinkQuantity" />
+            <Label fx:id="grainsQuantity" />
+            <Label fx:id="milkQuantity" />
+            <Label fx:id="chocolateQuantity" />
+            <Label text=" " />
+            <Label fx:id="drinkStrongnessInfo"/>
+            <Label fx:id="drinkCupsInfo" />
+            <Label text=" " />
+            <Label text=" " />
+            <Label fx:id="deviceWaterInfo" />
+            <Label fx:id="deviceCoffeeInfo" />
+            <Label fx:id="deviceOverFlowInfo" />
+            <Label fx:id="deviceFilterInfo" />
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="60" />
+      <VBox BorderPane.alignment="CENTER" prefHeight="255" prefWidth="200" fx:id="preparationLabelBox">
+          <Label text="%labelState" fx:id="labelState" />
+          <Label text="------------------" />
+          <Label text="%labelPreparation" fx:id="labelPreparation" />
+      </VBox>
+      <VBox BorderPane.alignment="CENTER" prefHeight="255" prefWidth="490" fx:id="vBoxPreparation">
+          <Label  fx:id="msgState"  />
+          <Label text="------------------" />
+          <Label  fx:id="msgPreparation"  />
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="60" prefWidth="5" />
+   </HBox>
+
+</AnchorPane>
