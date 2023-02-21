@@ -1,0 +1,40 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+task run(type: JavaExec) {
+    mainClass = "be.umons.macc.Launcher"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task generateJavadoc(type: Javadoc) {
+    source = sourceSets.main.allJava
+}
+
+
+sourceSets.main {
+    java {
+        srcDir 'src/main/java'
+    }
+    resources {
+        srcDirs = ['src/main/java', 'src/main/resources']
+        exclude "**/*.java"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'be.umons.macc.Launcher'
+    }
+}
